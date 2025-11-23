@@ -31,11 +31,56 @@ This version includes only the Flask backend and is prepared for deployment on H
 │   ├── chunker.py
 │   ├── groq_client.py
 │   ├── vectorstore/
+│   │   ├── index.faiss
+│   │   └── metadata.json
 │   └── uploads/
+│
+├── frontend/
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.ts
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   ├── public/
+│   │   ├── favicon.png
+│   │   └── logo.svg
+│   └── src/
+│       ├── App.tsx
+│       ├── main.tsx
+│       ├── index.css
+│       ├── lib/
+│       │   └── utils.ts
+│       ├── components/
+│       │   ├── navbar.tsx
+│       │   ├── pdfUploader.tsx
+│       │   ├── chatInput.tsx
+│       │   ├── chunkList.tsx
+│       │   └── ui/
+│       │       ├── button.tsx
+│       │       ├── card.tsx
+│       │       ├── textarea.tsx
+│       │       ├── input.tsx
+│       │       ├── tooltip.tsx
+│       │       ├── dialog.tsx
+│       │       ├── avatar.tsx
+│       │       ├── scroll-area.tsx
+│       │       └── toast.tsx
+│       ├── pages/
+│       │   ├── home.tsx
+│       │   └── chat.tsx
+│       ├── hooks/
+│       │   └── useChat.ts
+│       └── api/
+│           ├── queryClient.ts
+│           └── api.ts
+│
 ├── requirements.txt
 ├── Dockerfile
 ├── app.yaml
 └── README.md
+
 ```
 
 ---
@@ -101,7 +146,7 @@ python backend/app.py
 Backend starts at:
 
 ```
-http://localhost:3000
+http://localhost:7860
 ```
 
 ---
@@ -113,7 +158,7 @@ http://localhost:3000
 ```
 runtime: docker
 app_file: backend/app.py
-port: 3000
+port: 7860
 ```
 
 ### Add secret key
